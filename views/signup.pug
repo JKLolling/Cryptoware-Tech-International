@@ -1,23 +1,25 @@
 extends layout
 
-block content
 
-    form(action="/signup",method="post")
-      div
+block content
+    h1(class="head") Sign Up
+
+    form(id="signup" action="/signup",method="post")
+      div(class="space")
         label First Name 
         input(type="text",name="firstName",required)
-      div
+      div(class="space")
         label Last name 
         input(type="text",name="lastName",required)
-      div   
+      div(class="space")   
         label Email
         input(type="email",name="email",required)
-        br
+      div(class="space")
         label Password 
         input(type="password",name='password',required)
-        br
+      div(class="space")
         label Confirm Password
         input(type="password",name='confirmPassword',required)
         input(type="hidden",name="_csrf",value=csrfToken)
-        br
+      div(class="space")
         button(type="submit") Sign Up  

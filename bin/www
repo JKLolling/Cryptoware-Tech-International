@@ -15,4 +15,4 @@ db.sequelize.authenticate()
     console.error(err)
   })
 
-app.listen(port, () => console.log(`Listening on port ${port}...`));
+
