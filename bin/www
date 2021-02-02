@@ -14,5 +14,3 @@ db.sequelize.authenticate()
     console.log('Unable to connect to the database')
     console.error(err)
   })
-
-
