@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    form(action="/login",method="post")
+        dev
+          input(type="hidden",name="_csrf",value=csrfToken)  
+          label Email Address
+          input(type="email",name="email",required)
+          br
+          label Password
+          input(type="password",name="password",required)
+          br
+          button(type="submit") Log in 
