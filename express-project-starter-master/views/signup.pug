@@ -1,0 +1,20 @@
+extends layout
+
+block content
+
+    form(action="/signup",method="post")
+      div
+        label Full Name 
+        input(type="text",name="fullName",required)
+      div   
+        label Email
+        input(type="email",name="email",required)
+        br
+        label Password 
+        input(type="password",name='password',required)
+        br
+        label Confirm Password
+        input(type="password",name='confirmPassword',required)
+        input(type="hidden",name="_csrf",value=csrfToken)
+        br
+        button(type="submit") Sign Up  
