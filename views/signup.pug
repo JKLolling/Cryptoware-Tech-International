@@ -2,12 +2,32 @@ extends layout
 
 
 block content
-    h1(class="head") Sign Up
-
+  h1(class="head") Sign Up
+  if errors    
     form(id="signup" action="/signup",method="post")
       div(class="space")
         label First Name 
-        input(type="text",name="firstName",required)
+        input(type="text",name="firstName",required) #{user.firstName}
+      div(class="space")
+        label Last name 
+        input(type="text",name="lastName",required)
+      div(class="space")   
+        label Email
+        input(type="email",name="email",required)
+      div(class="space")
+        label Password 
+        input(type="password",name='password',required)
+      div(class="space")
+        label Confirm Password
+        input(type="password",name='confirmPassword',required)
+        input(type="hidden",name="_csrf",value=csrfToken)
+      div(class="space")
+        button(type="submit") Sign Up  
+  else
+    form(id="signup" action="/signup",method="post")
+      div(class="space")
+        label First Name 
+        input(type="text",name="firstName",required) #{user.firstName}
       div(class="space")
         label Last name 
         input(type="text",name="lastName",required)
