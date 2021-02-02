@@ -2,18 +2,21 @@ extends layout
 
 
 block content
-  h1(class="head") Sign Up
+  h1(class="head")=title
   if errors    
+    each error in errors
+      ul
+        li=error
     form(id="signup" action="/signup",method="post")
       div(class="space")
         label First Name 
-        input(type="text",name="firstName",required) #{user.firstName}
+        input(type="text",name="firstName",required, placeholder=user.firstName) 
       div(class="space")
-        label Last name 
-        input(type="text",name="lastName",required)
+        label Last Name 
+        input(type="text",name="lastName",required, placeholder=user.lastName)
       div(class="space")   
         label Email
-        input(type="email",name="email",required)
+        input(type="email",name="email",required, placeholder=user.email)
       div(class="space")
         label Password 
         input(type="password",name='password',required)
@@ -27,7 +30,7 @@ block content
     form(id="signup" action="/signup",method="post")
       div(class="space")
         label First Name 
-        input(type="text",name="firstName",required) #{user.firstName}
+        input(type="text",name="firstName",required) 
       div(class="space")
         label Last name 
         input(type="text",name="lastName",required)
