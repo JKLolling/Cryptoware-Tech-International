@@ -64,7 +64,7 @@ router.post('/signup', csrfProtection, userValidators, asyncHandler(async (req, 
 
     if (validatorErrors.isEmpty()) {
         const hashedPassword = await bcrypt.hash(password, 8);
-        user.password = hashedPassword
+        user.hashedPassword = hashedPassword
         await user.save()
         loginUser(req, res, user)
         res.redirect('/')
@@ -91,12 +91,26 @@ router.get('/login', csrfProtection, (req, res) => {
 router.post('/login', csrfProtection, loginValidators, asyncHandler(async (req, res) => {
     const { email, password } = req.body
     const validatorErrors = validationResult(req)
+    const user = db.User.build({ email })
 
+    let errors = []
     if (validatorErrors.isEmpty()) {
         const user = await db.User.findOne({ where: { email } })
 
+        if (user) {
+            const isPassword = await bcrypt.compare(password, db.User.hashedPassword)
+
+            if (isPassword) {
+                loginUser(req, res, user)
+                res.redirect('/')
+            }
+        }
+        errors.push('Invalid credentials')
+    } else {
+        errors = validatorErrors.array().map(err => err.msg)
     }
 
+    res.render('login', { title: 'Login!', errors, user, csrfToken: req.csrfToken() })
 }))
 
 
