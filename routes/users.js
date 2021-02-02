@@ -44,18 +44,40 @@ const userValidators = [
     .exists({ checkFalsy: true })
     .withMessage("password must exist")
     .isLength({ min: 8, max: 30 })
-    .withMessage("password must be between 8 and 30 characters")
-
+    .withMessage("password must be between 8 and 30 characters"),
+    check("confirmPassword")
+    .exists({ checkFalsy: true })
+    .withMessage("Confirm password must exist")
+    .custom((value, { req }) => {
+        if (value !== req.body.password) {
+            throw Error("Confirm password must match password!")
+        }
+        return true
+    }),
 ]
 
-router.post('/signup', csrfProtection, asyncHandler(async(req, res) => {
-    const { firstName, lastName, email, password, confirmPassword } = req.body
-    if (password === confirmPassword) {
+router.post('/signup', csrfProtection, userValidators, asyncHandler(async(req, res) => {
 
+    const { firstName, lastName, email, password } = req.body
+    const user = db.User.build({ email, firstName, lastName })
+    const validatorErrors = validationResult(req)
+
+    if (validatorErrors.isEmpty()) {
+        const hashedPassword = await bcrypt.hash(password, 8);
+        user.password = hashedPassword
+        await user.save()
+        loginUser(req, res, user)
+        res.redirect('/')
+    } else {
+        const errors = validatorErrors.array().map(err => err.msg)
+        res.render('signup', { title: "Sign Up!", user, errors, csrfToken: req.csrfToken() })
     }
-    res.redirect('/')
-    const hashedPassword = await bcrypt.hash(password, 8);
 }))
+
+
+
+
+
 
 
 
