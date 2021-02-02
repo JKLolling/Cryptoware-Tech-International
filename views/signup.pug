@@ -7,16 +7,16 @@ block content
     each error in errors
       ul
         li=error
-    form(id="signup" action="/signup",method="post")
+    form(id="signup" action="/users/signup",method="post")
       div(class="space")
         label First Name 
-        input(type="text",name="firstName",required, placeholder=user.firstName) 
+        input(type="text",name="firstName",required, value=user.firstName) 
       div(class="space")
         label Last Name 
-        input(type="text",name="lastName",required, placeholder=user.lastName)
+        input(type="text",name="lastName",required, value=user.lastName)
       div(class="space")   
         label Email
-        input(type="email",name="email",required, placeholder=user.email)
+        input(type="email",name="email",required, value=user.email)
       div(class="space")
         label Password 
         input(type="password",name='password',required)
@@ -27,7 +27,7 @@ block content
       div(class="space")
         button(type="submit") Sign Up  
   else
-    form(id="signup" action="/signup",method="post")
+    form(id="signup" action="/users/signup",method="post")
       div(class="space")
         label First Name 
         input(type="text",name="firstName",required) 

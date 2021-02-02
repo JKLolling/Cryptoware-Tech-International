@@ -100,7 +100,8 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async(req, r
         const user = await db.User.findOne({ where: { email } })
 
         if (user) {
-            const isPassword = await bcrypt.compare(password, db.User.hashedPassword)
+            console.log(user)
+            const isPassword = await bcrypt.compare(password, user.hashedPassword.toString())
 
             if (isPassword) {
                 loginUser(req, res, user)
