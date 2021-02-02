@@ -1,8 +1,8 @@
 const db = require('./db/models');
 
 
-// what does this do?
 const loginUser = (req, res, user) => {
+    // console.log(req.session)
     req.session.auth = {
         userId: user.id,
     };
