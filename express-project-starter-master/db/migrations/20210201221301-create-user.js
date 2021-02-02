@@ -10,7 +10,7 @@ module.exports = {
             },
             fullName: {
                 allowNull: false,
-                type: Sequelize.STRING
+                type: Sequelize.STRING(100)
             },
             picture: {
                 type: Sequelize.STRING
@@ -22,7 +22,7 @@ module.exports = {
             },
             hashedPassword: {
                 allowNull: false,
-                type: Sequelize.BINARY
+                type: Sequelize.STRING
             },
             createdAt: {
                 allowNull: false,
