@@ -5,4 +5,12 @@ html
         title=title
         link(rel='stylesheet' href='/stylesheets/reset.css')
   body
+    nav
+      if user
+       h3(class="head") Welcome #{user.firstName}
+      else 
+        a(href='/users/signup') Sign Up
+        img(src='https://assets.entrepreneur.com/slideshow/20160128195742-product-hunt.jpeg')
+        a(href='/users/login') Login
+
     block content

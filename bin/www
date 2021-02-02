@@ -6,11 +6,11 @@ const db = require('../db/models')
 const app = require('../app');
 
 db.sequelize.authenticate()
-    .then(() => {
-        console.log('Database connection successful')
-        app.listen(port, () => console.log(`Listening on port ${port}...`));
-    })
-    .catch(err => {
-        console.log('Unable to connect to the database')
-        console.error(err)
-    })
+  .then(() => {
+    console.log('Database connection successful')
+    app.listen(port, () => console.log(`Listening on port ${port}...`));
+  })
+  .catch(err => {
+    console.log('Unable to connect to the database')
+    console.error(err)
+  })
