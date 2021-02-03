@@ -1,0 +1,57 @@
+nav {
+  background-color: #0e0e0e;
+
+  width: 100%;
+
+  position: fixed;
+  top: 0;
+
+  height: 80px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul {
+  width: 1100px;
+  padding: 10px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav li {
+  list-style-type: none;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+nav a:hover {
+  font-size: 2em;
+}
+
+nav input {
+  background-color: lightgray;
+  font-size: 1.2em;
+  padding: 5px;
+}
+
+nav input:hover {
+  font-size: 1.25em;
+}
+
+.logo {
+  font-size: 3em;
+  color: #ce3aa1;
+}
+
+.logo:hover {
+  font-size: 3.5em;
+}

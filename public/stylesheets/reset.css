@@ -7,9 +7,9 @@ body {
   /* align-content: center; */
 } 
 
-nav {
-  display: flex;
-  justify-content: space-between;
+main {
+  margin-top: 80px;
+  padding: 30px
 }
 
 a {
