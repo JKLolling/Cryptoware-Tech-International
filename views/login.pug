@@ -2,29 +2,28 @@ extends layout
 
 
 block content
-  h1(class="head")=title
-  if errors    
-    each error in errors
-      ul
-        li=error
-    form(id="signup" action="/users/login",method="POST")      
-      div(class="space")   
-        label Email
-        input(type="email",name="email",required, value=user.email)
-      div(class="space")
-        label Password 
-        input(type="password",name='password',required)
-        input(type="hidden",name="_csrf",value=csrfToken)
-      div(class="space")
-        button(type="submit") Log in 
-  else
-    form(id="signup" action="/users/login",method="post")      
-      div(class="space")   
-        label Email
-        input(type="email",name="email",required)
-      div(class="space")
-        label Password 
-        input(type="password",name='password',required)
-        input(type="hidden",name="_csrf",value=csrfToken)
-      div(class="space")
-        button(type="submit") Log in   
+    if errors   
+        div(class="authCtn")
+            h1(class="head")=title
+            each error in errors
+                ul
+                    li=error
+            form(id="signup" action="/users/login",method="POST")      
+                div(class="space")                    
+                    input(type="email",name="email",required, value=user.email, placeholder="Email", class="authInp")
+                div(class="space")                    
+                    input(type="password",name='password',required, placeholder="Password", class="authInp")
+                    input(type="hidden",name="_csrf",value=csrfToken)
+                div(class="space")
+                    button(type="submit" class="authBtn") Log in 
+    else
+        div(class="authCtn")
+            h1(class="head")=title
+            form(id="signup" action="/users/login",method="post")      
+                div(class="space")                    
+                    input(type="email",name="email",required, placeholder="Email", class="authInp")
+                div(class="space")                    
+                    input(type="password",name='password',required, placeholder="Password", class="authInp")
+                    input(type="hidden",name="_csrf",value=csrfToken)
+                div(class="space")
+                    button(type="submit" class="authBtn") Log in   
