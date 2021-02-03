@@ -122,15 +122,24 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async(req, r
 
 router.post('/logout', (req, res) => {
     logoutUser(req, res)
-    res.redirect('/')
+    req.session.save(() => {
+        res.redirect('/')
+    })
 })
 
 
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-    res.send('respond with a resource');
-});
+
+router.get('/:id', asyncHandler(async(req, res) => {
+    const userId = req.params.id
+    const user = await db.User.findByPk(userId, { include: db.email })
+
+    res.render('profile', {
+        username: `Welcome ${user.firstName}`,
+        userImg: user.picture
+    })
+}));
 
 
 
