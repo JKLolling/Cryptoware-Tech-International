@@ -8,4 +8,13 @@ append head
 
 block content
   h1= title
-  p Welcome to your Project Skeleton
+  div(class='productListContainerOuter')
+    div(class='productListContainerInner')
+      div(class='dayOfListing') Today
+      ul(class='productList')
+        each product in products
+          li
+            img(src=`${product.defaultImg}`, alt="product image")
+            div
+              div= product.productName
+              div= product.description
