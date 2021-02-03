@@ -3,8 +3,9 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: black;
   color: rgb(255, 224, 224);
-  text-align: center;
-}
+  /* display: flex; */
+  /* align-content: center; */
+} 
 
 nav {
   display: flex;
@@ -42,27 +43,46 @@ img {
 }
 
 #signup {
-  display: inline-block;
-  margin-top: 1.5em;
+  display: flex;
+  max-width: 25rem;
+  flex-direction:column;
+  align-items: center;
   background-color: rgb(77, 77, 77);
   border-radius: 25px;
+  padding: 1.5rem;
+  margin:1.5rem auto;
+  
 }
 
 .space {
-  margin: 1em;
+  margin: 0.5em;
 }
 
-input {
-  margin-left: 10px;
+.authInp {
+  height: 2rem;
+  border-radius: 10px;
+  width: 20rem;
+  padding-left: .4rem;
+  font-size: large;
 }
 
-button {
+.authBtn {
   color: black;
   background-color: #ce3aa1;
+  border: none;
+  height: 1.7rem;
+  width: 6rem;
+  border-radius: 10px;
+  font-size: large;
+  
 }
-button:hover {
+.authBtn:hover {
   color: #ce3aa1;
   background-color: black;
+}
+
+.authCtn {
+  text-align: center;
 }
 
 .head {
