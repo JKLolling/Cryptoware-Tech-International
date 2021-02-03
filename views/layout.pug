@@ -4,15 +4,20 @@ html
       block head
         title=title
         link(rel='stylesheet' href='/stylesheets/reset.css')
+        link(rel='stylesheet' href='/stylesheets/navbar.css')
   body
     nav
-      if locals.authenticated
-       h3(class="head") Welcome #{user.firstName} #{user.lastName}
-       form(action="/users/logout",method="post")
-         button(type="submit") Log out 
-      else 
-        a(href='/users/signup') Sign Up
-        img(src='https://assets.entrepreneur.com/slideshow/20160128195742-product-hunt.jpeg')
-        a(href='/users/login') Login
+      ul
+        if locals.authenticated
+          li: h3(class="head") Welcome #{user.firstName} #{user.lastName}
+          li: a(href='/' class='logo') CTI
+          li: form(action="/users/logout" method="post")
+           button(type="submit") Log out
+        else
+          li: a(href='/' class='logo') CTI
+          li: input(type='text' placeholder='search...')
+          li: a(href='/users/login') Login
+          li: a(href='/users/signup') Sign Up
 
-    block content
+    main
+      block content
