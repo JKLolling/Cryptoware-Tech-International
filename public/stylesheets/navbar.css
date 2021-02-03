@@ -34,7 +34,7 @@ nav a {
 }
 
 nav a:hover {
-  font-size: 2em;
+  font-size: 1.75em;
 }
 
 nav input {
@@ -47,6 +47,10 @@ nav input:hover {
   font-size: 1.25em;
 }
 
+nav p {
+  color:#ce3aa1
+}
+
 .logo {
   font-size: 3em;
   color: #ce3aa1;
@@ -54,4 +58,20 @@ nav input:hover {
 
 .logo:hover {
   font-size: 3.5em;
+}
+
+.logoutBtn {
+  color: black;
+  background-color: #ce3aa1;
+  border: none;
+  height: 1.7rem;
+  width: 6rem;
+  border-radius: 10px;
+  font-size: large;
+
+}
+.logoutBtn:hover {
+  font-size: 1.25em;
+  height: 1.5em;
+  width: 5em;
 }

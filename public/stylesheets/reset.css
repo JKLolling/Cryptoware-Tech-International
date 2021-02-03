@@ -56,7 +56,7 @@ img {
 }
 
 #signup {
-    display: flex;
+    <<<<<<< HEAD display: flex;
     max-width: 25rem;
     flex-direction: column;
     align-items: center;
@@ -64,6 +64,15 @@ img {
     border-radius: 25px;
     padding: 1.5rem;
     margin: 1.5rem auto;
+    =======display: flex;
+    max-width: 25rem;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(77, 77, 77);
+    border-radius: 25px;
+    padding: 1.5rem;
+    margin: 1.5rem auto;
+    >>>>>>>main
 }
 
 .space {
@@ -79,13 +88,21 @@ img {
 }
 
 .authBtn {
-    color: black;
+    <<<<<<< HEAD color: black;
     background-color: #ce3aa1;
     border: none;
     height: 1.7rem;
     width: 6rem;
     border-radius: 10px;
     font-size: large;
+    =======color: black;
+    background-color: #ce3aa1;
+    border: none;
+    height: 1.7rem;
+    width: 6rem;
+    border-radius: 10px;
+    font-size: large;
+    >>>>>>>main
 }
 
 .authBtn:hover {
