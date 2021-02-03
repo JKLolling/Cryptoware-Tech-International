@@ -1,7 +1,5 @@
 'use strict';
 
-const { col } = require("sequelize/types");
-
 module.exports = (sequelize, DataTypes) => {
   const Product = sequelize.define('Product', {
     productName: DataTypes.STRING,
