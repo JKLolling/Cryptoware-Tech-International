@@ -62,8 +62,8 @@ img {
   height: 2rem;
   border-radius: 10px;
   width: 20rem;
-  padding-left: .4rem;
-  font-size: large;
+  padding: 0.7rem;
+  font-size: 1.2rem;
 }
 
 .authBtn {
