@@ -22,8 +22,15 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         }
     }, {});
-    User.associate = function(models) {
-        // associations can be defined here
+    User.associate = function (models) {
+        const columnMapping = {
+            through: 'ProductMakers',
+            other: 'productId',
+            foreignKey: 'userId'
+        }
+        User.belongsToMany(models.Product, columnMapping)
+
+        User.hasMany(models.Comment, { foreignKey: 'userId' })
     };
     return User;
 };
