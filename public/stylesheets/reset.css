@@ -5,7 +5,7 @@ body {
   color: rgb(255, 224, 224);
   /* display: flex; */
   /* align-content: center; */
-} 
+}
 
 main {
   margin-top: 80px;
@@ -51,7 +51,7 @@ h1 {
   border-radius: 25px;
   padding: 1.5rem;
   margin:1.5rem auto;
-  
+
 }
 
 .space {
@@ -74,7 +74,7 @@ h1 {
   width: 6rem;
   border-radius: 10px;
   font-size: large;
-  
+
 }
 .authBtn:hover {
   color: #ce3aa1;

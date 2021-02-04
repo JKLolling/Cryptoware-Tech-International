@@ -9,10 +9,11 @@ html
     nav
       ul
         if locals.authenticated
-          li: h3(class="head") Welcome #{user.firstName} #{user.lastName}
           li: a(href='/' class='logo') CTI
+          li: input(type='search' placeholder='search...')
+          li: a(href=`/users/${locals.user.id}`) Welcome #{user.firstName} #{user.lastName}
           li: form(action="/users/logout" method="post")
-           button(type="submit") Log out
+           button(type="submit" class='logoutBtn') Log out
         else
           li: a(href='/' class='logo') CTI
           li: input(type='text' placeholder='search...')
