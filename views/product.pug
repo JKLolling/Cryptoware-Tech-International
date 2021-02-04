@@ -11,7 +11,7 @@ block content
                 p(id="descriptionP")=product.description
             div(class="secondDiv")
                 div(class="internalDiv")
-                    h4 Product Maker
+                    h4 Product Makers
                     each user in userArr
                         a(href=`/user/${user.id}`)
                             p #{user.firstName} #{user.lastName}
