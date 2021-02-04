@@ -7,14 +7,35 @@ module.exports = {
     up: async(queryInterface, Sequelize) => {
         const defaultProducts = [];
 
-        for (let i = 0; i < num_fake_products; i++) {
-            defaultProducts.push({
-                productName: faker.commerce.productName(),
-                description: faker.commerce.productDescription(),
-                defaultImg: faker.image.image()
-            })
-        }
+    for (let i = 0; i < num_fake_products / 4; i++) {
+      defaultProducts.push({
+        productName: faker.commerce.productName(),
+        description: faker.commerce.productDescription(),
+        defaultImg: faker.image.image(),
+        dayMade: 'Today'
+      })
 
+      defaultProducts.push({
+        productName: faker.commerce.productName(),
+        description: faker.commerce.productDescription(),
+        defaultImg: faker.image.image(),
+        dayMade: 'Yesterday'
+      })
+
+      defaultProducts.push({
+        productName: faker.commerce.productName(),
+        description: faker.commerce.productDescription(),
+        defaultImg: faker.image.image(),
+        dayMade: 'Last Week'
+      })
+
+      defaultProducts.push({
+        productName: faker.commerce.productName(),
+        description: faker.commerce.productDescription(),
+        defaultImg: faker.image.image(),
+        dayMade: 'Last Month'
+      })
+    }
         return queryInterface.bulkInsert('Products', defaultProducts, {})
     },
 
