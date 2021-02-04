@@ -10,7 +10,7 @@ html
       ul
         if locals.authenticated
           li: a(href='/' class='logo') CTI
-          li: input(type='text' placeholder='search...')
+          li: input(type='search' placeholder='search...')
           li: a(href=`/users/${locals.user.id}`) Welcome #{user.firstName} #{user.lastName}
           li: form(action="/users/logout" method="post")
            button(type="submit" class='logoutBtn') Log out

@@ -8,13 +8,14 @@ append head
 
 block content
   h1= title
-  div(class='productListContainerOuter')
-    div(class='productListContainerInner')
-      div(class='dayOfListing') Today
-      ul(class='productList')
+  .productList_OuterContainer
+    .productList_InnerContainer
+      .productList_dayOfListing Today
+      ul.productList_products
         each product in products
-          li
-            img(src=`${product.defaultImg}`, alt="product image")
-            div
-              div= product.productName
-              div= product.description
+          a(href=`/products/${product.id}`)
+            li
+              img(src=`${product.defaultImg}`, alt="product image")
+              div
+                .productList_name= product.productName
+                .productList_description= product.description
