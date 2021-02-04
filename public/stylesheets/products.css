@@ -6,6 +6,7 @@
   border-radius: 10px;
   padding: 1.5rem;
   margin:.1rem auto;  
+  min-width: 30rem;
 }
 
 .anthCtner {
@@ -22,17 +23,17 @@
   margin-left: auto;
   margin-right: auto;
 }
+
 .comment {
-  border: 2px solid gray;
+  border-bottom: 2px solid rgb(100, 100, 100);
   position:relative;
-  margin: 0rem;
+  margin: 0.4rem;
   background-color: black;
-  border-radius: 5px;
 }
 
 .center {
   /* text-align: center; */
-  max-width: 35rem;
+  max-width: 30rem;
   min-width: 25rem;
 }
 
@@ -40,7 +41,6 @@
     text-align: center;
 }
  
-
 #descriptionP {
     border-top: 3px solid rgb(109, 105, 105);
     padding-top: 1rem;
@@ -50,12 +50,16 @@
   padding-top: 2rem;
   max-width: 7rem;
   text-align: center;
-  position:relative;   
+  display: flex;
+  flex-direction: column;   
+  justify-content: space-between;
 }
+
 .secondDiv h4 {
     border-bottom: 2px solid gray;
 }
-.secondDiv button {
+
+.buttonDiv button {
   color: black;
   background-color: #ce3aa1;
   border: none;
@@ -64,11 +68,9 @@
   border-radius: 10px;
   font-size: large;
   bottom: 3px;
-  position:absolute;
-  bottom:0;
 }
 
-.secondDiv button:hover {
+.buttonDiv button:hover {
   color: #ce3aa1;
   background-color: black;
 }
@@ -83,33 +85,35 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-size: x-small;
+  font-size: smaller;
   padding: 1px
 }
 
 .bottomHalf {
-  max-width: 40rem;
+  max-width: 35rem;
   margin:.1rem auto;
 }
 
 .bottomHalf li {
   list-style-type: none;
   padding: .2rem 1rem;
-  font-size: smaller;
+  font-size:medium;
 }
 
 .pmargin {
   padding: 0px;
   margin: 0px;
 }
+
 .pmargincom {
   padding: 0px;
   margin: 0px 0px .7rem 0px;
+  text-indent: 1.5rem;
 }
 
 .links {
   text-decoration: none;
-  font-size: x-small;
+  font-size: smaller;
   position:absolute;
   bottom:0;
   right:0;

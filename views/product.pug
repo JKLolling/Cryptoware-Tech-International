@@ -7,15 +7,16 @@ block content
         div(class="anthCtner")
             div(class="center")
                 h1=product.productName
-                each photo in photosArr
-                    img(src=photo.productImg class="pdctImg")
+                img(src=product.defaultImg class="pdctImg")
                 p(id="descriptionP")=product.description
             div(class="secondDiv")
-                h4 Product Maker
-                each user in userArr
-                    a(href=`/user/${user.id}`)
-                        p #{user.firstName} #{user.lastName}
-                button Likes
+                div(class="internalDiv")
+                    h4 Product Maker
+                    each user in userArr
+                        a(href=`/user/${user.id}`)
+                            p #{user.firstName} #{user.lastName}
+                div(class="buttonDiv")
+                    button Likes
         
     div(class="spacebtwn")
         p(class="pmargin") discussion:
