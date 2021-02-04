@@ -4,9 +4,8 @@ const faker = require('faker');
 const { num_fake_products } = require('../../config/index').db
 
 module.exports = {
-  up: async (queryInterface, Sequelize) => {
-    const defaultProducts = [];
-
+    up: async(queryInterface, Sequelize) => {
+        const defaultProducts = [];
 
     for (let i = 0; i < num_fake_products / 4; i++) {
       defaultProducts.push({
@@ -37,11 +36,10 @@ module.exports = {
         dayMade: 'Last Month'
       })
     }
+        return queryInterface.bulkInsert('Products', defaultProducts, {})
+    },
 
-    return queryInterface.bulkInsert('Products', defaultProducts, {})
-  },
-
-  down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('Products', null, { truncate: true, cascade: true, restartIdentity: true });
-  }
+    down: (queryInterface, Sequelize) => {
+        return queryInterface.bulkDelete('Products', null, { truncate: true, cascade: true, restartIdentity: true });
+    }
 };

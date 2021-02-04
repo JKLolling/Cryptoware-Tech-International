@@ -1,87 +1,97 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: black;
-  color: lightgrey;
-  /* display: flex; */
-  /* align-content: center; */
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-color: black;
+    color: lightgrey;
+    /* display: flex; */
+    /* align-content: center; */
 }
 
 main {
-  margin-top: 80px;
-  padding: 30px
+    margin-top: 80px;
+    padding: 30px
 }
 
 a {
-  color: #ce3aa1;
-  margin: 50px;
+    color: #ce3aa1;
+    margin: 50px;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6, a, ol, li, ul, div, span,
-body, header, nav {
-  font-size: 1rem;
-  /* color: inherit; */
-  /* background-color: transparent; */
-  margin: 0;
-  padding: 0;
-  outline: 0;
-  font-weight: normal;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+ol,
+li,
+ul,
+div,
+span,
+body,
+header,
+nav {
+    font-size: 1rem;
+    /* color: inherit; */
+    /* background-color: transparent; */
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    font-weight: normal;
 }
 
 h1 {
-  font-size: 2rem;
+    font-size: 2rem;
 }
 
-
 #signup {
-  display: flex;
-  max-width: 25rem;
-  flex-direction:column;
-  align-items: center;
-  background-color: rgb(77, 77, 77);
-  border-radius: 25px;
-  padding: 1.5rem;
-  margin:1.5rem auto;
-
+    display: flex;
+    max-width: 25rem;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(77, 77, 77);
+    border-radius: 25px;
+    padding: 1.5rem;
+    margin: 1.5rem auto;
 }
 
 .space {
-  margin: 0.5em;
+    margin: 0.5em;
 }
 
 .authInp {
-  height: 2rem;
-  border-radius: 10px;
-  width: 20rem;
-  padding: 0.7rem;
-  font-size: 1.2rem;
+    height: 2rem;
+    border-radius: 10px;
+    width: 20rem;
+    padding: 0.7rem;
+    font-size: 1.2rem;
 }
 
 .authBtn {
-  color: black;
-  background-color: #ce3aa1;
-  border: none;
-  height: 1.7rem;
-  width: 6rem;
-  border-radius: 10px;
-  font-size: large;
-
+    color: black;
+    background-color: #ce3aa1;
+    border: none;
+    height: 1.7rem;
+    width: 6rem;
+    border-radius: 10px;
+    font-size: large;
 }
+
 .authBtn:hover {
-  color: #ce3aa1;
-  background-color: black;
+    color: #ce3aa1;
+    background-color: black;
 }
 
 .authCtn {
-  text-align: center;
+    text-align: center;
 }
 
 .head {
-  /* margin-top: 1em; */
-  color:#ce3aa1
+    /* margin-top: 1em; */
+    color: #ce3aa1
 }
-

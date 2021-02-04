@@ -1,0 +1,24 @@
+extends layout
+block content
+  div(calss="main")
+    div(class="container-head")
+      div(class="star") Star
+    
+
+    div(class="container")
+          div(class="profile-header")
+              div(class="profile-img")
+                  ul 
+                    img(src=`${pictures}`, alt="Profile Pictures")
+    div(class="container con-2")
+          div(class="profile-header")
+              div(class="profile-img")
+              div(class="profile-nav-info")   
+                  h3(class="activity")  
+                    button('submit')  activity #{activity}
+    div(class="productBox") productBox 
+        ul 1
+        ul 2
+        ul 3       
+
+         
