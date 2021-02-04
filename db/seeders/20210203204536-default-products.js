@@ -8,7 +8,7 @@ module.exports = {
     const defaultProducts = [];
 
 
-    for (let i = 0; i < num_fake_products; i++) {
+    for (let i = 0; i < num_fake_products / 4; i++) {
       defaultProducts.push({
         productName: faker.commerce.productName(),
         description: faker.commerce.productDescription(),
