@@ -1,0 +1,33 @@
+extends layout    
+append head
+    link(rel='stylesheet' href='/stylesheets/products.css')
+
+block content
+    div(id= "container")
+        div(class="anthCtner")
+            div(class="center")
+                h1=product.productName
+                img(src=product.defaultImg class="pdctImg")
+                p(id="descriptionP")=product.description
+            div(class="secondDiv")
+                div(class="internalDiv")
+                    h4 Product Makers
+                    each user in userArr
+                        a(href=`/user/${user.id}`)
+                            p #{user.firstName} #{user.lastName}
+                div(class="buttonDiv")
+                    button Likes
+        
+    div(class="spacebtwn")
+        p(class="pmargin") discussion:
+        
+        
+    div(class="bottomHalf")
+        ul
+            each comment in commentArr
+                li(class ="comment")
+                    p(class="pmargincom")=comment.comment
+                    a(class="links" href=`/user/${comment.userId}`): p(class="pmargin") #{comment.User.firstName} #{comment.User.lastName}
+
+
+            

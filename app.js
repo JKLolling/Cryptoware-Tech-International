@@ -8,6 +8,8 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store); // w
 const { sequelize } = require('./db/models');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const productsRouter = require('./routes/products');
+
 const { restoreUser } = require('./auth');
 
 const app = express();
@@ -40,6 +42,7 @@ store.sync(); // what does this do/
 app.use(restoreUser)
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/products', productsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

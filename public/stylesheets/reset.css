@@ -2,7 +2,7 @@ body {
     padding: 50px;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
     background-color: black;
-    color: rgb(255, 224, 224);
+    color: lightgrey;
     /* display: flex; */
     /* align-content: center; */
 }
@@ -47,12 +47,6 @@ nav {
 
 h1 {
     font-size: 2rem;
-}
-
-img {
-    height: 60px;
-    width: 75px;
-    margin-bottom: 1.4rem;
 }
 
 #signup {
