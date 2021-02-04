@@ -1,18 +1,25 @@
 extends layout    
-
+append head
+    link(rel='stylesheet' href='/stylesheets/products.css')
 
 block content
     div(id= "container")
-        div(class="center")
-            h1=product.productName
-            each photo in photosArr
-                img(src=photo.productImg class="pdctImg")
-            p=product.description
+        div(class="anthCtner")
+            div(class="center")
+                h1=product.productName
+                each photo in photosArr
+                    img(src=photo.productImg class="pdctImg")
+                p(id="descriptionP")=product.description
+            div(class="secondDiv")
+                h4 Product Maker
+                each user in userArr
+                    a(href=`/user/${user.id}`)
+                        p #{user.firstName} #{user.lastName}
+                button Likes
         
     div(class="spacebtwn")
-        p(class="pmargin") description
-        each user in userArr
-            p(class="pmargin") #{user.firstName} #{user.lastName}
+        p(class="pmargin") discussion:
+        
         
     div(class="bottomHalf")
         ul
