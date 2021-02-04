@@ -1,23 +1,25 @@
 extends layout    
 
+
 block content
     div(id= "container")
-        div
+        div(class="center")
             h1=product.productName
             each photo in photosArr
                 img(src=photo.productImg class="pdctImg")
             p=product.description
         
-        div
-            each user in userArr
-                p #{user.firstName} #{user.lastName}
-
-        div
-            ul
-                each comment in commentArr
-                    li(class ="comment")
-                        p=comment.comment
-                        a(href=`/user/${comment.userId}`): p #{comment.User.firstName}
+    div(class="spacebtwn")
+        p(class="pmargin") description
+        each user in userArr
+            p(class="pmargin") #{user.firstName} #{user.lastName}
+        
+    div(class="bottomHalf")
+        ul
+            each comment in commentArr
+                li(class ="comment")
+                    p(class="pmargincom")=comment.comment
+                    a(class="links" href=`/user/${comment.userId}`): p(class="pmargin") #{comment.User.firstName} #{comment.User.lastName}
 
 
             
