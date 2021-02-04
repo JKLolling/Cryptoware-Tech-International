@@ -7,11 +7,9 @@ module.exports = {
       Return a promise to correctly handle asynchronicity.
 
       Example:
-      */
-    return queryInterface.bulkInsert('Products', [
-      {
-        productName: "Test Product", description: "Test Product Description", defaultImg: "Photo"
-      }
+    */
+    return queryInterface.bulkInsert('ProductMakers', [
+      { productId: 1, userId: 1 }
     ], {});
 
   },
@@ -22,8 +20,8 @@ module.exports = {
       Return a promise to correctly handle asynchronicity.
 
       Example:
-      */
-    return queryInterface.bulkDelete('Products', null, {});
+    */
+    return queryInterface.bulkDelete('ProductMakers', null, {});
 
   }
 };

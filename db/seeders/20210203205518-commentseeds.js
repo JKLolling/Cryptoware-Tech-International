@@ -8,10 +8,8 @@ module.exports = {
 
       Example:
       */
-    return queryInterface.bulkInsert('Products', [
-      {
-        productName: "Test Product", description: "Test Product Description", defaultImg: "Photo"
-      }
+    return queryInterface.bulkInsert('Comments', [
+      { comment: "Looks Good", productId: 1, userId: 1, }
     ], {});
 
   },
@@ -20,10 +18,9 @@ module.exports = {
     /*
       Add reverting commands here.
       Return a promise to correctly handle asynchronicity.
-
-      Example:
-      */
-    return queryInterface.bulkDelete('Products', null, {});
+     */
+    Example:
+    return queryInterface.bulkDelete('Comments', null, {});
 
   }
 };

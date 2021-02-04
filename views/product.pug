@@ -1,4 +1,23 @@
-extends layout
+extends layout    
 
 block content
-    h1 Hello
+    div(id= "container")
+        div
+            h1=product.productName
+            each photo in photosArr
+                img(src=photo.productImg class="pdctImg")
+            p=product.description
+        
+        div
+            each user in userArr
+                p #{user.firstName} #{user.lastName}
+
+        div
+            ul
+                each comment in commentArr
+                    li(class ="comment")
+                        p=comment.comment
+                        a(href=`/user/${comment.userId}`): p #{comment.User.firstName}
+
+
+            

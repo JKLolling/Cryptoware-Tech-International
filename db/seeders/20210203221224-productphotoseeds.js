@@ -8,10 +8,8 @@ module.exports = {
 
       Example:
       */
-    return queryInterface.bulkInsert('Products', [
-      {
-        productName: "Test Product", description: "Test Product Description", defaultImg: "Photo"
-      }
+    return queryInterface.bulkInsert('ProductPhotos', [
+      { productId: 1, productImg: "https://cdn.pocket-lint.com/r/s/970x/assets/images/149963-tv-review-roku-premiere-review-image1-wfnuscxolu.jpg" }
     ], {});
 
   },
@@ -20,10 +18,9 @@ module.exports = {
     /*
       Add reverting commands here.
       Return a promise to correctly handle asynchronicity.
-
-      Example:
-      */
-    return queryInterface.bulkDelete('Products', null, {});
+    */
+    Example:
+    return queryInterface.bulkDelete('ProductPhotos', null, {});
 
   }
 };
