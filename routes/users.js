@@ -5,6 +5,7 @@ const { csrfProtection, asyncHandler } = require('./utils')
 const db = require('../db/models');
 const bcrypt = require('bcryptjs')
 const { check, validationResult } = require('express-validator');
+const { profile } = require('console');
 
 router.get('/signup', csrfProtection, (req, res) => {
     const user = db.User.build()
@@ -133,11 +134,13 @@ router.post('/logout', (req, res) => {
 
 router.get('/:id', asyncHandler(async(req, res) => {
     const userId = req.params.id
-    const user = await db.User.findByPk(userId, { include: db.email })
+    const pictures = await db.User.findAll({
+        limit: 1
+    })
 
     res.render('profile', {
-        username: `Welcome ${user.firstName}`,
-        userImg: user.picture
+        pictures,
+        title: "Profile"
     })
 }));
 

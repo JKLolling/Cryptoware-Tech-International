@@ -8,9 +8,9 @@ block content
     div(class="container")
           div(class="profile-header")
               div(class="profile-img")
-                    img(src=`${userImg}`, alt="Profile Pictures")
-              div(class="profile-nav-info")   
-                  h3(class="user-name")=username
+                each picture in pictures
+                  ul
+                    img(src=`${picture.picture}`, alt="Profile Pictures")
     div(class="container con-2")
           div(class="profile-header")
               div(class="profile-img")
@@ -20,4 +20,6 @@ block content
     div(class="productBox") productBox 
         ul 1
         ul 2
-        ul 3        
+        ul 3       
+
+         
