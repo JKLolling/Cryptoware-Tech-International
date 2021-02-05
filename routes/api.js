@@ -18,17 +18,19 @@ router.get('/products/:day(Today|Yesterday|Last%20Week|Last%20Month)', asyncHand
 }))
 
 router.get('/products/keyword=:keyword', asyncHandler(async (req, res) => {
-  const keyword = req.params.keyword
 
-  const products = await Product.findAll({
+  const keyword = req.params.keyword
+  let products
+
+  products = await Product.findAll({
     where: {
       productName: {
-        [Op.substring]: keyword
+        [Op.iLike]: `%${keyword}%`
       }
     }
   })
-
   res.json(products)
+
 }))
 
 module.exports = router;

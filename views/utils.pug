@@ -3,7 +3,7 @@ mixin productList(productsArr, day, showMore = true)
     .productList_InnerContainer
       .productList_dayOfListing= day
       ul.productList_products
-        each product in productsToday
+        each product in productsArr
           a(href=`/products/${product.id}`)
             li
               img(src=`${product.defaultImg}`, alt="product image")
