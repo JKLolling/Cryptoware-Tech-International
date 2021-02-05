@@ -9,8 +9,9 @@ append head
   script(src="/javascripts/index.js" type="module" defer)
 
 block content
-  h1= title
-  +productList(productsToday, 'Today')
-  +productList(productsYesterday, 'Yesterday')
-  +productList(productsLastWeek, 'Last Week')
-  +productList(productsLastMonth, 'Last Month')
+  h1#productList_title= title
+  .productList_Outermost_Container
+    +productList(productsToday, 'Today')
+    +productList(productsYesterday, 'Yesterday')
+    +productList(productsLastWeek, 'Last Week')
+    +productList(productsLastMonth, 'Last Month')

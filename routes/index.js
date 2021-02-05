@@ -6,32 +6,36 @@ const router = express.Router();
 
 /* GET home page. */
 router.get('/', asyncHandler(async(req, res, next) => {
+    const today = new Date('2/8/21').toISOString()
     const productsToday = await Product.findAll({
-        where: { dayMade: 'Today' },
+        where: { createdAt: today },
         order: [
             ['createdAt', 'ASC']
         ],
         limit: 10
     })
 
+    const yesterday = new Date('2/7/21').toISOString()
     const productsYesterday = await Product.findAll({
-        where: { dayMade: 'Yesterday' },
+        where: { createdAt: yesterday },
         order: [
             ['createdAt', 'ASC']
         ],
         limit: 10
     })
 
+    const lastWeek = new Date('2/1/21').toISOString()
     const productsLastWeek = await Product.findAll({
-        where: { dayMade: 'Last Week' },
+        where: { createdAt: lastWeek },
         order: [
             ['createdAt', 'ASC']
         ],
         limit: 10
     })
 
+    const lastMonth = new Date('1/8/21').toISOString()
     const productsLastMonth = await Product.findAll({
-        where: { dayMade: 'Last Month' },
+        where: { createdAt: lastMonth },
         order: [
             ['createdAt', 'ASC']
         ],
