@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', event => {
         showMoreContentBtns[i].addEventListener('click', async event => {
             try {
                 const content = await fetch(`/api/products/${days[i]}`)
-                console.log(content)
+                // console.log(content)
                 const json = await content.json()
                 console.log(json)
             } catch (err) {
