@@ -1,0 +1,14 @@
+mixin productList(productsArr, day, showMore = true)
+  .productList_OuterContainer
+    .productList_InnerContainer
+      .productList_dayOfListing= day
+      ul.productList_products
+        each product in productsToday
+          a(href=`/products/${product.id}`)
+            li
+              img(src=`${product.defaultImg}`, alt="product image")
+              div
+                .productList_name= product.productName
+                .productList_description= product.description
+      if showMore
+        span.productList_moreButton ▼ Show 10 more ▼

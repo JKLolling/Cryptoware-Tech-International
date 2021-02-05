@@ -67,3 +67,19 @@ h1 {
 .productList_description {
     font-size: .9em;
 }
+
+.productList_moreButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px;
+
+    background-color: #0e0e0e;
+    color: lightgray;
+}
+
+.productList_moreButton:hover {
+    cursor: pointer;
+    background-color: #1b1b1b;
+}
