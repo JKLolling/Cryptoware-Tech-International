@@ -1,6 +1,7 @@
 extends layout    
 append head
     link(rel='stylesheet' href='/stylesheets/products.css')
+    script(src="/javascripts/comments.js" type="module" defer)
 
 block content
     div(id= "container")
@@ -23,13 +24,14 @@ block content
         
         
     div(class="bottomHalf")
-        div(class="makeCommDiv")
-            div(class="submit")
-                div(class="textArea")                
-                    textarea(name="comment" placeholder="What do you think about this product?" required id="text")
-                div(class="textSbmt")
-                    button(type="submit" id="sbmtBtn") send
-        ul
+        if locals.authenticated
+            div(class="makeCommDiv")
+                div(class="submit")
+                    div(class="textArea")                
+                        textarea(name="comment" placeholder="What do you think about this product?" required id="text" data-productId=`${product.id}` data-userId=`${locals.user.id}` data-userfirst=locals.user.firstName data-userlast=locals.user.lastName)
+                    div(class="textSbmt")
+                        button(type="submit" id="sbmtBtn") send
+        ul(id="commentList")
             each comment in commentArr
                 li(class ="comment")
                     p(class="pmargincom")=comment.comment
