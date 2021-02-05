@@ -16,9 +16,28 @@ block content
               div(class="profile-nav-info")   
                   h3(class="activity")  
                     button('submit')  activity #{activity}
-    div(class="productBox") productBox 
-        ul 1
-        ul 2
-        ul 3       
-
-         
+                    div(id= "container")
+    div(id= "container")
+        div(class="anthCtner")
+            div(class="center")
+                h1=product.productName
+                p(id="descriptionP")=product.description
+            div(class="secondDiv")
+                div(class="internalDiv")
+                    h4 Product Makers
+                    each user in userArr
+                        a(href=`/users/${user.id}`)
+                            p #{user.firstName} #{user.lastName}
+                div(class="buttonDiv")
+                    button Likes
+        
+    div(class="spacebtwn")
+        p(class="pmargin") discussion:
+        
+        
+    div(class="bottomHalf")
+        ul
+            each comment in commentArr
+                li(class ="comment")
+                    p(class="pmargincom")=comment.comment
+                    a(class="links" href=`/users/${comment.userId}`): p(class="pmargin") #{comment.User.firstName} #{comment.User.lastName}

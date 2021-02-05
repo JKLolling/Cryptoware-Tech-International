@@ -22,6 +22,7 @@
             .username-profile {
                 padding: 10px;
                 display: flex;
+                margin-left: 70px;
             }
             
             .fullname {
@@ -32,8 +33,8 @@
             
             .bio-profile {
                 color: lightgray;
-                font-size: 25px;
-                margin-left: -130px;
+                font-size: 20px;
+                margin-left: -230px;
                 margin-top: 70px;
             }
             
@@ -60,22 +61,29 @@
                 border: 4px solid #15181c;
                 border-bottom: 10px solid #15181c;
                 border-right: 2px solid #15181c;
-                padding: 10px;
+                padding: 20px;
                 /* left: 100px; */
             }
             
             .activity button {
                 padding: 15px;
-                border-radius: 10%;
-                position: static;
+                /* position: static; */
                 /* right: 500px; */
-                background: rgb(104, 102, 102);
-                color: white;
+                /* color: white; */
+                background: none;
+                color: inherit;
+                /* border-radius: rgb(151, 25, 25); */
+                padding: 0;
+                font: inherit;
+                cursor: pointer;
+                outline: inherit;
+                color: #ce3aa1;
+                width: 2px;
             }
             
             .activity button:hover {
                 /* background: rgb(173, 173, 173); */
-                color: #ce3aa1;
+                color: #bb4597;
             }
             
             img {
