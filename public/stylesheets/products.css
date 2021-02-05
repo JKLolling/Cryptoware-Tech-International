@@ -89,6 +89,34 @@
   padding: 1px
 }
 
+.submit {
+  display: flex;
+  flex-direction: row;
+}
+
+#text {
+  height: 3rem;
+  width:28rem;
+  background-color: lightgray;
+  border-radius: 5px;
+  padding:0.3rem;
+  margin-left: 1.5rem;
+  text-decoration: none;
+}
+
+#sbmtBtn {
+  margin-top: 0.2rem;
+  margin-left: .8rem;
+  height: 2.5rem;
+  width: 4rem;
+  background-color: orangered;
+  border: none;
+  border-radius: 7px;
+  font-weight: 500;
+  color: white;
+  font-size: large;
+}
+
 .bottomHalf {
   max-width: 35rem;
   margin:.1rem auto;

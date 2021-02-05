@@ -23,6 +23,12 @@ block content
         
         
     div(class="bottomHalf")
+        div(class="makeCommDiv")
+            div(class="submit")
+                div(class="textArea")                
+                    textarea(name="comment" placeholder="What do you think about this product?" required id="text")
+                div(class="textSbmt")
+                    button(type="submit" id="sbmtBtn") send
         ul
             each comment in commentArr
                 li(class ="comment")
