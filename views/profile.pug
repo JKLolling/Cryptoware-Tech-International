@@ -1,9 +1,12 @@
 extends layout
+append head
+    link(rel='stylesheet' href='/stylesheets/index.css')
+    script(src="/javascripts/profilecomments.js" type="module" defer)
 block content
-  div(calss="main")
+  div(class="main")
     
     div(class="container")   
-          img(src=`${pictures}`, alt="Profile Pictures")
+          img(class="profile-img-1",src=`${pictures}`, alt="Profile Pictures")
           div(class="username-profile")           
             p(class="fullname")=firstName 
           div   
@@ -11,33 +14,20 @@ block content
           div(class="bio-con")  
             p(class="bio-profile")=biography
     div(class="con-2")
-          div(class="profile-header")
-              div(class="profile-img")
-              div(class="profile-nav-info")   
                   h3(class="activity")  
-                    button('submit')  activity #{activity}
-                    div(id= "container")
-    div(id= "container")
-        div(class="anthCtner")
-            div(class="center")
-                h1=product.productName
-                p(id="descriptionP")=product.description
-            div(class="secondDiv")
-                div(class="internalDiv")
-                    h4 Product Makers
-                    each user in userArr
-                        a(href=`/users/${user.id}`)
-                            p #{user.firstName} #{user.lastName}
-                div(class="buttonDiv")
-                    button Likes
-        
-    div(class="spacebtwn")
-        p(class="pmargin") discussion:
-        
-        
-    div(class="bottomHalf")
-        ul
-            each comment in commentArr
-                li(class ="comment")
-                    p(class="pmargincom")=comment.comment
-                    a(class="links" href=`/users/${comment.userId}`): p(class="pmargin") #{comment.User.firstName} #{comment.User.lastName}
+                    button(type='submit',class="madeBtn")  Made  #{madeBtn}
+                  h3(class="commentIdBtn")                  
+                    button(type='submit',class="commentBtn")  Comments  #{commentBtn}                
+    div(class="made-product")  Product Made
+        span(class='spanId') (0)           
+    div(class="productBox") 
+          .productList_OuterContainer
+            .productList_InnerContainer
+              ul.productList_products       
+                  each product in products 
+                      a(href=`/products/${product.id}`)    
+                          li
+                            img(src=`${product.defaultImg}`, alt="product image")
+                            div
+                              .productList_name= product.productName
+                              .productList_description= product.description 

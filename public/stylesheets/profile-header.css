@@ -1,143 +1,192 @@
-            .container,
-            .container-head,
-            .con-2 {
-                position: relative;
-                /* top: 0px; */
-                /* height: 80px; */
-                /* display: flex; */
-                /* justify-content: center; */
-                align-items: center;
-                margin-left: 20px;
-            }
-            
-            .container {
-                display: flex;
-                box-sizing: border-box;
-                padding: 50px;
-                background-image: url('https://1.bp.blogspot.com/-Lp05C7vuG9k/USSBnZvgrnI/AAAAAAAARug/5_frpFEOwjc/s320/Twitter-Backgrounds-Wallpapers-36.jpg');
-                width: 250px;
-                height: 250px;
-            }
-            
-            .username-profile {
-                padding: 10px;
-                display: flex;
-                margin-left: 70px;
-            }
-            
-            .fullname {
-                color: rgb(255, 255, 255);
-                font-size: 40px;
-                margin-bottom: 120px;
-            }
-            
-            .bio-profile {
-                color: lightgray;
-                font-size: 20px;
-                margin-left: -230px;
-                margin-top: 70px;
-            }
-            
-            .container,
-            .container-head {
-                left: 250px;
-                width: 1100px;
-                border: 4px solid #15181c;
-                border-bottom: 10px solid #15181c;
-                border-right: 2px solid #15181c;
-                /* width: 1000px; */
-            }
-            
-            .container-head {
-                padding: 10px;
-                left: 250px;
-            }
-            
-            .con-2 {
-                display: flex;
-                box-sizing: border-box;
-                left: 250px;
-                width: 1100px;
-                border: 4px solid #15181c;
-                border-bottom: 10px solid #15181c;
-                border-right: 2px solid #15181c;
-                padding: 20px;
-                /* left: 100px; */
-            }
-            
-            .activity button {
-                padding: 15px;
-                /* position: static; */
-                /* right: 500px; */
-                /* color: white; */
-                background: none;
-                color: inherit;
-                /* border-radius: rgb(151, 25, 25); */
-                padding: 0;
-                font: inherit;
-                cursor: pointer;
-                outline: inherit;
-                color: #ce3aa1;
-                width: 2px;
-            }
-            
-            .activity button:hover {
-                /* background: rgb(173, 173, 173); */
-                color: #bb4597;
-            }
-            
-            img {
-                border-radius: 50%;
-                height: 200px;
-                width: 200px;
-                border: 4px solid rgb(19, 18, 18);
-                box-shadow: 0px 5px 10px rgba(0, 0, 0, .2);
-                position: static;
-                right: 400px;
-            }
-            
-            img:hover {
-                border: #ce3aa1;
-            }
-            
-            .container-style {
-                display: flex;
-                flex-direction: column;
-                align-items: stretch;
-                width: 1200px;
-            }
-            
-            .style-header {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                margin-bottom: 10px;
-            }
-            
-            .counter {
-                line-height: 32px;
-                font-weight: 600;
-                font-size: 20px;
-            }
-            
-            .user-name {
-                text-align: center;
-            }
-            
-            .productBox {
-                text-align: center;
-                left: 250px;
-                width: 1200px;
-                border: 4px solid #15181c;
-                border-bottom: 10px solid #15181c;
-                border-right: 2px solid #15181c;
-                position: relative;
-                /* top: 0px; */
-                /* height: 80px; */
-                /* display: flex; */
-                /* justify-content: center; */
-                /* align-items: center; */
-                height: 900px;
-                margin-left: 20px;
-                width: 1100px;
-            }
+.container,
+.container-head,
+.con-2 {
+    position: relative;
+    /* top: 0px; */
+    /* height: 80px; */
+    /* display: flex; */
+    /* justify-content: center; */
+    align-items: center;
+    margin-left: 20px;
+}
+
+.container {
+    display: flex;
+    box-sizing: border-box;
+    padding: 50px;
+    background-image: url('https://1.bp.blogspot.com/-Lp05C7vuG9k/USSBnZvgrnI/AAAAAAAARug/5_frpFEOwjc/s320/Twitter-Backgrounds-Wallpapers-36.jpg');
+    width: 250px;
+    height: 250px;
+}
+
+.username-profile {
+    padding: 10px;
+    display: flex;
+    margin-left: 70px;
+}
+
+.fullname {
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    margin-bottom: 120px;
+}
+
+.bio-profile {
+    color: lightgray;
+    font-size: 20px;
+    margin-left: -230px;
+    margin-top: 70px;
+}
+
+.container,
+.container-head {
+    left: 250px;
+    width: 1100px;
+    border: 4px solid #15181c;
+    border-bottom: 10px solid #15181c;
+    border-right: 2px solid #15181c;
+    /* width: 1000px; */
+}
+
+.container-head {
+    padding: 10px;
+    left: 250px;
+}
+
+.con-2 {
+    display: flex;
+    box-sizing: border-box;
+    left: 250px;
+    width: 1100px;
+    border: 4px solid #15181c;
+    border-bottom: 10px solid #15181c;
+    border-right: 2px solid #15181c;
+    /* left: 100px; */
+    height: 80px;
+}
+
+.activity button {
+    /* padding: 15px; */
+    /* position: static; */
+    /* right: 500px; */
+    /* color: white; */
+    /* border-radius: rgb(151, 25, 25); */
+    /* padding: 0; */
+    background: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    color: #ce3aa1;
+    width: 122px;
+    margin-left: 10px;
+    height: 50px;
+    border-width: inherit;
+    font-size: 17px;
+}
+
+.activity button:hover {
+    /* background: rgb(173, 173, 173); */
+    color: #bb4597;
+    border-width: thin;
+    border-color: violet;
+}
+
+.h {
+    margin-left: 0px;
+}
+
+.commentBtn {
+    height: 50px;
+    background: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    color: #ce3aa1;
+    width: 122px;
+    border-width: inherit;
+    margin-left: 0px;
+    font-size: 17px;
+}
+
+.commentBtn:hover {
+    color: #bb4597;
+    border-width: thin;
+    border-color: violet;
+}
+
+.profile-img-1 {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    border: 4px solid rgb(19, 18, 18);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, .2);
+    position: static;
+    right: 400px;
+}
+
+.profile-img-1:hover {
+    border: #ce3aa1;
+}
+
+.container-style {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 1200px;
+}
+
+.style-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.counter {
+    line-height: 32px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.user-name {
+    text-align: center;
+}
+
+.productBox {
+    left: 250px;
+    width: 1200px;
+    border: 4px solid #15181c;
+    border-bottom: 10px solid #15181c;
+    border-right: 2px solid #15181c;
+    position: relative;
+    /* top: 0px; */
+    /* height: 80px; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    margin-left: 20px;
+    width: 1100px;
+}
+
+.made-product {
+    padding: 10px;
+    margin-left: 263px;
+    color: lightgray;
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    margin-top: 20px;
+}
+
+.spanId {
+    color: lightgray;
+    font-size: 20px;
+    margin-left: 5px;
+    line-height: 32px;
+    font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    margin-top: 20px;
+}

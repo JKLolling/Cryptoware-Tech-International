@@ -135,16 +135,14 @@ router.post('/logout', (req, res) => {
 router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
     const userSignedIn = req.session.auth;
     const userId = req.params.id
-    const user = await db.User.findByPk(userId, {})
-    console.log(user)
-    const product = await db.Product.findByPk(req.params.id, {
-        include: [{
-                model: db.Comment,
-                include: [db.User]
-            },
-            db.ProductPhoto, db.User
+    const user = await db.User.findByPk(userId, {
+        include: [
+            db.Product,
+            db.Comment
         ]
     })
+    console.log(user)
+
     res.render('profile', {
         pictures: user.picture,
         title: "Profile Page",
@@ -152,10 +150,7 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
         lastName: user.lastName,
         biography: user.biography,
         userSignedIn,
-        product,
-        commentArr: product.Comments,
-        photosArr: product.ProductPhotos,
-        userArr: product.Users
+        products: user.Products
     })
 }));
 
