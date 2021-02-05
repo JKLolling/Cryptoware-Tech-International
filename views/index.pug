@@ -1,5 +1,7 @@
 extends layout
 
+include utils
+
 append head
   //- add page specific styles by appending to the head
   link(rel="stylesheet" href="/stylesheets/index.css")
@@ -8,47 +10,7 @@ append head
 
 block content
   h1= title
-  .productList_OuterContainer
-    .productList_InnerContainer
-      .productList_dayOfListing Today
-      ul.productList_products
-        each product in productsToday
-          a(href=`/products/${product.id}`)
-            li
-              img(src=`${product.defaultImg}`, alt="product image")
-              div
-                .productList_name= product.productName
-                .productList_description= product.description
-  .productList_OuterContainer
-    .productList_InnerContainer
-      .productList_dayOfListing Yesterday
-      ul.productList_products
-        each product in productsYesterday
-          a(href=`/products/${product.id}`)
-            li
-              img(src=`${product.defaultImg}`, alt="product image")
-              div
-                .productList_name= product.productName
-                .productList_description= product.description
-  .productList_OuterContainer
-    .productList_InnerContainer
-      .productList_dayOfListing Last Week
-      ul.productList_products
-        each product in productsLastWeek
-          a(href=`/products/${product.id}`)
-            li
-              img(src=`${product.defaultImg}`, alt="product image")
-              div
-                .productList_name= product.productName
-                .productList_description= product.description
-  .productList_OuterContainer
-    .productList_InnerContainer
-      .productList_dayOfListing Last Month
-      ul.productList_products
-        each product in productsLastMonth
-          a(href=`/products/${product.id}`)
-            li
-              img(src=`${product.defaultImg}`, alt="product image")
-              div
-                .productList_name= product.productName
-                .productList_description= product.description
+  +productList(productsToday, 'Today')
+  +productList(productsYesterday, 'Yesterday')
+  +productList(productsLastWeek, 'Last Week')
+  +productList(productsLastMonth, 'Last Month')

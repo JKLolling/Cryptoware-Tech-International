@@ -3,9 +3,10 @@ module.exports = (sequelize, DataTypes) => {
     const Product = sequelize.define('Product', {
         productName: DataTypes.STRING,
         description: DataTypes.TEXT,
-        defaultImg: DataTypes.STRING
+        defaultImg: DataTypes.STRING,
+        dayMade: DataTypes.STRING
     }, {});
-    Product.associate = function(models) {
+    Product.associate = function (models) {
         const columnMapping = {
             through: 'ProductMakers',
             other: 'userId',
