@@ -1,16 +1,16 @@
 extends layout
 block content
   div(calss="main")
-    div(class="container-head")
-      div(class="star") Star
     
-
-    div(class="container")
-          div(class="profile-header")
-              div(class="profile-img")
-                  ul 
-                    img(src=`${pictures}`, alt="Profile Pictures")
-    div(class="container con-2")
+    div(class="container")   
+          img(src=`${pictures}`, alt="Profile Pictures")
+          div(class="username-profile")           
+            p(class="fullname")=firstName 
+          div   
+            p(class="fullname")=lastName  
+          div(class="bio-con")  
+            p(class="bio-profile")=biography
+    div(class="con-2")
           div(class="profile-header")
               div(class="profile-img")
               div(class="profile-nav-info")   

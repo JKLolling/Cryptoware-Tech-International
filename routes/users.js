@@ -134,10 +134,13 @@ router.post('/logout', (req, res) => {
 
 router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
     const userId = req.params.id
-    const pictures = await db.User.findByPk(userId, {})
+    const user = await db.User.findByPk(userId, {})
     res.render('profile', {
-        pictures: pictures.picture,
-        title: "Profile"
+        pictures: user.picture,
+        title: "Profile",
+        firstName: user.firstName,
+        lastName: user.lastName,
+        biography: user.biography
     })
 }));
 
