@@ -20,7 +20,8 @@ module.exports = (sequelize, DataTypes) => {
         hashedPassword: {
             type: DataTypes.STRING.BINARY,
             allowNull: false
-        }
+        },
+        biography: DataTypes.TEXT
     }, {});
     User.associate = function (models) {
         const columnMapping = {
