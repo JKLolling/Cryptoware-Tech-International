@@ -2,28 +2,18 @@ extends layout
 
 
 block content
-    if errors   
-        div(class="authCtn")
-            h1(class="head")=title
+    div(class="authCtn")
+        h1(class="head")=title
+        if errors
             each error in errors
                 ul
-                    li=error
-            form(id="signup" action="/users/login",method="POST")      
-                div(class="space")                    
-                    input(type="email",name="email",required, value=user.email, placeholder="Email", class="authInp")
-                div(class="space")                    
-                    input(type="password",name='password',required, placeholder="Password", class="authInp")
-                    input(type="hidden",name="_csrf",value=csrfToken)
-                div(class="space")
-                    button(type="submit" class="authBtn") Log in 
-    else
-        div(class="authCtn")
-            h1(class="head")=title
-            form(id="signup" action="/users/login",method="post")      
-                div(class="space")                    
-                    input(type="email",name="email",required, placeholder="Email", class="authInp")
-                div(class="space")                    
-                    input(type="password",name='password',required, placeholder="Password", class="authInp")
-                    input(type="hidden",name="_csrf",value=csrfToken)
-                div(class="space")
-                    button(type="submit" class="authBtn") Log in   
+                    li.errors=error
+    form(id="signup" action="/users/login",method="post")
+        div(class="space")
+            input(type="email",name="email",required, placeholder="Email", class="authInp")
+        div(class="space")
+            input(type="password",name='password',required, placeholder="Password", class="authInp")
+            input(type="hidden",name="_csrf",value=csrfToken)
+        div(class="space login_buttons_div")
+            button(type="submit" class="authBtn") Log in
+            button(type="submit" class="authBtn" id='guest_login' name='guest_login' value='true') Log in as Guest

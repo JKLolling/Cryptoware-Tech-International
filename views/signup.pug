@@ -2,40 +2,23 @@ extends layout
 
 
 block content
-    if errors 
-      div(class="authCtn")
-        h1(class="head")=title   
+    div(class="authCtn")
+      h1(class="head")=title
+      if errors
         each error in errors
           ul
-            li=error
-        form(id="signup" action="/users/signup",method="post")
-          div(class="space")            
-            input(type="text",name="firstName",required, value=user.firstName, placeholder="First Name", class="authInp") 
-          div(class="space")            
-            input(type="text",name="lastName",required, value=user.lastName, placeholder="Last Name", class="authInp")
-          div(class="space")            
-            input(type="email",name="email",required, value=user.email, placeholder="email", class="authInp")
-          div(class="space")            
-            input(type="password",name='password',required, placeholder="Password", class="authInp")
-          div(class="space", class="authInp")            
-            input(type="password",name='confirmPassword',required, placeholder="Confirm Password", class="authInp")
-            input(type="hidden",name="_csrf",value=csrfToken)
-          div(class="space")
-            button(type="submit" class="authBtn") Sign Up  
-    else
-      div(class="authCtn")
-        h1(class="head")=title
-        form(id="signup" action="/users/signup",method="post")
-          div(class="space")            
-            input(type="text",name="firstName",required, placeholder="First Name", class="authInp") 
-          div(class="space")            
-            input(type="text",name="lastName",required, placeholder="Last Name", class="authInp")
-          div(class="space")            
-            input(type="email",name="email",required, placeholder="Email", class="authInp")
-          div(class="space")            
-            input(type="password",name='password',required, placeholder="Password", class="authInp", class="authInp")
-          div(class="space")            
-            input(type="password",name='confirmPassword',required, placeholder="Confirm Password", class="authInp")
-            input(type="hidden",name="_csrf",value=csrfToken)
-          div(class="space")
-            button(type="submit" class="authBtn") Sign Up  
+            li.errors=error
+      form(id="signup" action="/users/signup",method="post")
+        div(class="space")
+          input(type="text",name="firstName",required, placeholder="First Name", class="authInp")
+        div(class="space")
+          input(type="text",name="lastName",required, placeholder="Last Name", class="authInp")
+        div(class="space")
+          input(type="email",name="email",required, placeholder="Email", class="authInp")
+        div(class="space")
+          input(type="password",name='password',required, placeholder="Password", class="authInp", class="authInp")
+        div(class="space")
+          input(type="password",name='confirmPassword',required, placeholder="Confirm Password", class="authInp")
+          input(type="hidden",name="_csrf",value=csrfToken)
+        div(class="space")
+          button(type="submit" class="authBtn") Sign Up

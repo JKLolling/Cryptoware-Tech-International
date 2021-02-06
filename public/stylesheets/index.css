@@ -47,7 +47,6 @@ h1 {
 .productList_products li {
     color: lightgray;
     display: flex;
-    flex-wrap: wrap;
 }
 
 .productList_products img {
