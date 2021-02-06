@@ -88,13 +88,20 @@ document.addEventListener('DOMContentLoaded', event => {
                     const divOuter = document.createElement('div')
                     const nameDiv = document.createElement('div')
                     const descriptionDiv = document.createElement('div')
+
+
                     newATag.setAttribute('href', `/products/${product.id}`)
                     newImg.setAttribute('src', `${product.defaultImg}`)
                     newImg.setAttribute('alt', 'product image')
                     nameDiv.setAttribute('class', 'productList_name')
                     descriptionDiv.setAttribute('class', 'productList_description')
+
+
+
                     nameDiv.innerText = product.productName
                     descriptionDiv.innerText = product.description
+
+
                     newATag.appendChild(newli)
                     newli.appendChild(newImg)
                     newli.appendChild(divOuter)
