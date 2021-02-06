@@ -42,7 +42,6 @@ document.addEventListener('DOMContentLoaded', event => {
             })
         }
     }
-
     addMoreContentBtns()
 
     const debounce = (callback, wait) => {
@@ -72,7 +71,6 @@ document.addEventListener('DOMContentLoaded', event => {
 
             const products = await fetch(`/api/products/keyword=${keyword}`)
             const jsonProducts = await products.json()
-
 
             const middleContainer = document.createElement('div')
             const innerContainer = document.createElement('div')
@@ -122,8 +120,6 @@ document.addEventListener('DOMContentLoaded', event => {
 
                 ul.appendChild(newATag)
             }
-
-
         } catch (err) {
             console.log(err)
         }

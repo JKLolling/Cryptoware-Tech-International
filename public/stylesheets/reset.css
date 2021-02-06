@@ -95,3 +95,18 @@ h1 {
     /* margin-top: 1em; */
     color: #ce3aa1
 }
+
+* {
+    font-family: 'Ezcar';
+}
+
+@font-face {
+    font-family: 'Ezcar';
+    src: url('../fonts/eczar/eczar/Eczar-Regular.ttf');
+    /* src: url('Fonts/SansationLight/SansationLight.eot?#iefix') format('embedded-opentype'),
+         url('Fonts/SansationLight/SansationLight.woff') format('woff'),
+         url('Fonts/SansationLight/SansationLight.ttf') format('truetype'),
+         url('Fonts/SansationLight/SansationLight.svg#SansationLight') format('svg'); */
+    font-weight: normal;
+    font-style: normal;
+}
