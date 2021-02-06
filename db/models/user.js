@@ -21,9 +21,11 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING.BINARY,
             allowNull: false
         },
-        biography: DataTypes.TEXT
+        biography: {
+            type: DataTypes.TEXT
+        }
     }, {});
-    User.associate = function (models) {
+    User.associate = function(models) {
         const columnMapping = {
             through: 'ProductMakers',
             other: 'productId',

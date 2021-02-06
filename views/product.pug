@@ -1,6 +1,7 @@
 extends layout    
 append head
     link(rel='stylesheet' href='/stylesheets/products.css')
+    script(src="/javascripts/comments.js" type="module" defer)
 
 block content
     div(id= "container")
@@ -13,7 +14,7 @@ block content
                 div(class="internalDiv")
                     h4 Product Makers
                     each user in userArr
-                        a(href=`/user/${user.id}`)
+                        a(href=`/users/${user.id}`)
                             p #{user.firstName} #{user.lastName}
                 div(class="buttonDiv")
                     button Likes
@@ -23,11 +24,18 @@ block content
         
         
     div(class="bottomHalf")
-        ul
+        if locals.authenticated
+            div(class="makeCommDiv")
+                div(class="submit")
+                    div(class="textArea")                
+                        textarea(name="comment" placeholder="What do you think about this product?" required id="text" data-productId=`${product.id}` data-userId=`${locals.user.id}` data-userfirst=locals.user.firstName data-userlast=locals.user.lastName)
+                    div(class="textSbmt")
+                        button(type="submit" id="sbmtBtn") send
+        ul(id="commentList")
             each comment in commentArr
                 li(class ="comment")
                     p(class="pmargincom")=comment.comment
-                    a(class="links" href=`/user/${comment.userId}`): p(class="pmargin") #{comment.User.firstName} #{comment.User.lastName}
+                    a(class="links" href=`/users/${comment.userId}`): p(class="pmargin") #{comment.User.firstName} #{comment.User.lastName}
 
 
             
