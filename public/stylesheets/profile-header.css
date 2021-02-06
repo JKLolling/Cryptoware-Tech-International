@@ -192,5 +192,14 @@
 }
 
 .borderComment {
-    border-color: wheat;
+    border: 4px solid #15181c;
+    font-size: 13px;
+    height: 110px;
+    color: rgb(160, 154, 154);
+}
+
+.borderCommentPro {
+    font-size: 24px;
+    border: 1px solid #15181c;
+    color: rgb(160, 154, 154);
 }
