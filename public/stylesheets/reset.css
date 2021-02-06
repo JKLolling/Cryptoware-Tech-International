@@ -54,7 +54,7 @@ h1 {
     max-width: 25rem;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(77, 77, 77);
+    background-color:  #0e0e0e;
     border-radius: 25px;
     padding: 1.5rem;
     margin: 1.5rem auto;
@@ -96,13 +96,28 @@ h1 {
     color: #ce3aa1
 }
 
+.errors {
+    list-style-type: none;
+}
+
 * {
-    font-family: 'Ezcar';
+    font-family: 'Rubik';
+}
+
+#guest_login {
+    height: auto;
+}
+
+.login_buttons_div {
+    padding-top: 5px;
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
 }
 
 @font-face {
-    font-family: 'Ezcar';
-    src: url('../fonts/eczar/eczar/Eczar-Regular.ttf');
+    font-family: 'Rubik';
+    src: url('../fonts/rubik/rubik/Rubik[wght].ttf');
     /* src: url('Fonts/SansationLight/SansationLight.eot?#iefix') format('embedded-opentype'),
          url('Fonts/SansationLight/SansationLight.woff') format('woff'),
          url('Fonts/SansationLight/SansationLight.ttf') format('truetype'),
