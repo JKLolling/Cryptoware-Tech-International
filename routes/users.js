@@ -92,7 +92,25 @@ router.get('/login', csrfProtection, (req, res) => {
 })
 
 router.post('/login', csrfProtection, loginValidators, asyncHandler(async (req, res) => {
-    const { email, password } = req.body
+    const { email, password, guest_login } = req.body
+
+    if (guest_login === 'true') {
+        let guest_user = await db.User.findOne({
+            where: { email: 'demo@demo.com' }
+        })
+        if (!guest_user) {
+            guest_user = db.User.build({ email: 'demo@demo.com', firstName: 'demo', lastName: 'demoman' })
+            const hashedPassword = await bcrypt.hash('password', 8);
+            guest_user.hashedPassword = hashedPassword
+            console.log('hello')
+            await guest_user.save()
+        }
+        loginUser(req, res, guest_user)
+        return req.session.save(() => {
+            res.redirect('/')
+        })
+    }
+
     const validatorErrors = validationResult(req)
     const user = db.User.build({ email })
 
