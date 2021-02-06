@@ -1,24 +1,33 @@
 extends layout
+append head
+    link(rel='stylesheet' href='/stylesheets/index.css')
+    script(src="/javascripts/profilecomments.js" type="module" defer)
 block content
-  div(calss="main")
-    div(class="container-head")
-      div(class="star") Star
+  div(class="main")
     
-
-    div(class="container")
-          div(class="profile-header")
-              div(class="profile-img")
-                  ul 
-                    img(src=`${pictures}`, alt="Profile Pictures")
-    div(class="container con-2")
-          div(class="profile-header")
-              div(class="profile-img")
-              div(class="profile-nav-info")   
+    div(class="container")   
+          img(class="profile-img-1",src=`${pictures}`, alt="Profile Pictures")
+          div(class="username-profile")           
+            p(class="fullname")=firstName 
+          div   
+            p(class="fullname")=lastName  
+          div(class="bio-con")  
+            p(class="bio-profile")=biography
+    div(class="con-2")
                   h3(class="activity")  
-                    button('submit')  activity #{activity}
-    div(class="productBox") productBox 
-        ul 1
-        ul 2
-        ul 3       
-
-         
+                    button(type='submit',class="madeBtn")  Made  #{madeBtn}
+                  h3(class="commentIdBtn")                  
+                    button(type='submit',class="commentBtn", data-userid=userId )  Comments  #{commentBtn}                
+    div(class="made-product")  Product Made
+        span(class='spanId') (0)           
+    div(class="productBox") 
+          .productList_OuterContainer
+            .productList_InnerContainer
+              ul.productList_products       
+                  each product in products 
+                      a(href=`/products/${product.id}`)    
+                          li
+                            img(src=`${product.defaultImg}`, alt="product image")
+                            div
+                              .productList_name= product.productName
+                              .productList_description= product.description 

@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
         defaultImg: DataTypes.STRING,
         dayMade: DataTypes.STRING
     }, {});
-    Product.associate = function (models) {
+    Product.associate = function(models) {
         const columnMapping = {
             through: 'ProductMakers',
             other: 'userId',
