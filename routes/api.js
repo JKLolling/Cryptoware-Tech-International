@@ -2,7 +2,7 @@ const express = require('express');
 
 const { asyncHandler } = require('./utils')
 const { Product, Comment } = require('../db/models')
-const { Product } = require('../db/models')
+
 const { Sequelize } = require('../db/models')
 const router = express.Router();
 const Op = Sequelize.Op;
