@@ -20,8 +20,12 @@ window.addEventListener('DOMContentLoaded', e => {
             const newBox = document.createElement('div')
 
             newBox.setAttribute('class', 'borderComment')
+
+
             newDiv.setAttribute('class', 'productList_name')
             newDiv2.setAttribute('class', 'productList_description')
+
+
 
             newDiv.innerHTML = element.comment
             newDiv2.innerHTML = element.Product.productName
