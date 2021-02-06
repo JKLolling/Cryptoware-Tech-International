@@ -141,7 +141,7 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
             db.Comment
         ]
     })
-    console.log(user)
+    console.log(user.Products)
 
     res.render('profile', {
         pictures: user.picture,
@@ -150,7 +150,8 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
         lastName: user.lastName,
         biography: user.biography,
         userSignedIn,
-        products: user.Products
+        products: user.Products,
+        userId
     })
 }));
 
