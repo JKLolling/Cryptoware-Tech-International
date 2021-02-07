@@ -59,8 +59,10 @@ const userValidators = [
 
 router.post('/signup', csrfProtection, userValidators, asyncHandler(async (req, res) => {
 
+  const picture = '../../images/Generic-person.svg.png'
+  const biography = 'Generic Bio'
   const { firstName, lastName, email, password } = req.body
-  const user = db.User.build({ email, firstName, lastName })
+  const user = db.User.build({ email, firstName, lastName, picture, biography })
   const validatorErrors = validationResult(req)
 
   if (validatorErrors.isEmpty()) {
@@ -99,7 +101,9 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async (req, 
       where: { email: 'demo@demo.com' }
     })
     if (!guest_user) {
-      guest_user = db.User.build({ email: 'demo@demo.com', firstName: 'Demo', lastName: 'Demoman' })
+      const biography = 'Demoman is merely a demo. But one day he will be a real boy.'
+      const picture = '../../images/Generic-person.svg.png'
+      guest_user = db.User.build({ email: 'demo@demo.com', firstName: 'Demo', lastName: 'Demoman', picture, biography })
       const hashedPassword = await bcrypt.hash('password', 8);
       guest_user.hashedPassword = hashedPassword
       console.log('hello')
@@ -137,15 +141,12 @@ router.post('/login', csrfProtection, loginValidators, asyncHandler(async (req, 
   res.render('login', { title: 'Login!', errors, user, csrfToken: req.csrfToken() })
 }))
 
-
-
 router.post('/logout', (req, res) => {
   logoutUser(req, res)
   req.session.save(() => {
     res.redirect('/')
   })
 })
-
 
 
 /* GET users listing. */
@@ -159,7 +160,6 @@ router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
       db.Comment
     ]
   })
-
 
   res.render('profile', {
     productslength: (user.Products).length,

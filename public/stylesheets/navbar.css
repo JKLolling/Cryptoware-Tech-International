@@ -94,6 +94,8 @@ nav p {
 }
 
 #navbar_signup {
+  display: flex;
+  justify-content: flex-end;
   width: 110px;
 }
 
