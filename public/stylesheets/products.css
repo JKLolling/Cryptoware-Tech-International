@@ -1,58 +1,57 @@
 #container {
-  display: flex;
-  max-width: 40rem;
-  flex-direction:column;
-  background-color: #0e0e0e;
-  border-radius: 10px;
-  padding: 1.5rem;
-  margin:.1rem auto;  
-  min-width: 30rem;
+    display: flex;
+    max-width: 40rem;
+    flex-direction: column;
+    background-color: #0e0e0e;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: .1rem auto;
+    min-width: 30rem;
 }
 
 .anthCtner {
-    display:flex;
+    display: flex;
     justify-content: space-evenly;
 }
 
 .pdctImg {
-  max-height: 14rem;
-  max-width: 18.6rem;
-  border-radius: 10px;
-  margin-top: 1rem;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+    max-height: 14rem;
+    max-width: 18.6rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .comment {
-  border-bottom: 2px solid rgb(100, 100, 100);
-  position:relative;
-  margin: 0.4rem;
-  background-color: black;
+    border-bottom: 2px solid rgb(100, 100, 100);
+    position: relative;
+    margin: 0.4rem;
+    background-color: rgb(15, 15, 15);
 }
 
 .center {
-
-  max-width: 30rem;
-  min-width: 25rem;
+    max-width: 30rem;
+    min-width: 25rem;
 }
 
 .center h1 {
     text-align: center;
 }
- 
+
 #descriptionP {
     border-top: 3px solid rgb(109, 105, 105);
     padding-top: 1rem;
 }
 
 .secondDiv {
-  padding-top: 2rem;
-  max-width: 7rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;   
-  justify-content: space-between;
+    padding-top: 2rem;
+    max-width: 7rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .secondDiv h4 {
@@ -60,19 +59,19 @@
 }
 
 .buttonDiv button {
-  color: black;
-  background-color: #ce3aa1;
-  border: none;
-  height: 1.7rem;
-  width: 6rem;
-  border-radius: 10px;
-  font-size: large;
-  bottom: 3px;
+    color: black;
+    background-color: #ce3aa1;
+    border: none;
+    height: 1.7rem;
+    width: 6rem;
+    border-radius: 10px;
+    font-size: large;
+    bottom: 3px;
 }
 
 .buttonDiv button:hover {
-  color: #ce3aa1;
-  background-color: black;
+    color: #ce3aa1;
+    background-color: black;
 }
 
 .secondDiv a {
@@ -80,69 +79,70 @@
 }
 
 .spacebtwn {
-  max-width: 40rem;
-  margin: .8rem auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  font-size: smaller;
-  padding: 1px
+    max-width: 40rem;
+    margin: .8rem auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: smaller;
+    padding: 1px
 }
 
 .submit {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 
 #text {
-  height: 3rem;
-  width:28rem;
-  background-color: lightgray;
-  border-radius: 5px;
-  padding:0.3rem;
-  margin-left: 1.5rem;
-  text-decoration: none;
+    height: 3rem;
+    width: 28rem;
+    background-color: lightgray;
+    border-radius: 5px;
+    padding: 0.3rem;
+    margin-left: 1.5rem;
+    text-decoration: none;
 }
 
 #sbmtBtn {
-  margin-top: 0.2rem;
-  margin-left: .8rem;
-  height: 2.5rem;
-  width: 4rem;
-  background-color: #613855;
-  border: none;
-  border-radius: 7px;
-  font-weight: 500;
-  color: white;
-  font-size: large;
+    margin-top: 0.2rem;
+    margin-left: .8rem;
+    height: 2.5rem;
+    width: 4rem;
+    background-color: #613855;
+    border: none;
+    border-radius: 7px;
+    font-weight: 500;
+    color: white;
+    font-size: large;
 }
 
 .bottomHalf {
-  max-width: 35rem;
-  margin:.1rem auto;
+    max-width: 35rem;
+    margin: .1rem auto;
 }
 
 .bottomHalf li {
-  list-style-type: none;
-  padding: .2rem 1rem;
-  font-size:medium;
+    list-style-type: none;
+    padding: .2rem 1rem;
+    font-size: medium;
 }
 
 .pmargin {
-  padding: 0px;
-  margin: 0px;
+    padding: 0px;
+    margin: 0px;
+    font-size: 16px;
 }
 
 .pmargincom {
-  padding: 0px;
-  margin: 0px 0px .7rem 0px;
-  text-indent: 1.5rem;
+    padding: 7px;
+    margin: 0px 0px .7rem 0px;
+    text-indent: 1.5rem;
 }
 
 .links {
-  text-decoration: none;
-  font-size: smaller;
-  position:absolute;
-  bottom:0;
-  right:0;
+    text-decoration: none;
+    font-size: smaller;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
