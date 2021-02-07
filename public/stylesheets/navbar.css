@@ -75,3 +75,32 @@ nav p {
     height: 1.5em;
     width: 5em;
 }
+/*
+#navbar_search{
+  width: max-content;
+} */
+
+#navbar_logo {
+  width: 80px;
+}
+#navbar_login {
+  width: 65px;
+}
+
+#navbar_logout {
+  display: flex;
+  justify-content: flex-end;
+  width: 110px;
+}
+
+#navbar_signup {
+  display: flex;
+  justify-content: flex-end;
+  width: 110px;
+}
+
+#navbar_welcome {
+  display: flex;
+  justify-content: center;
+  width: 350px;
+}
