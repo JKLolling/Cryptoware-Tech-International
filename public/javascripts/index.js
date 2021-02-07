@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', event => {
         try {
           const content = await fetch(`/api/products/${days[i]}`)
           const json = await content.json()
-          const ul = event.target.previousElementSibling
+
+          const ul = event.target.parentNode
           for (let i = 0; i < json.length; i++) {
             const product = json[i]
             const newATag = document.createElement('a')
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', event => {
           }
           event.target.remove()
         } catch (err) {
-          console.error(error)
+          console.error(err)
         }
       })
     }
@@ -52,6 +53,12 @@ document.addEventListener('DOMContentLoaded', event => {
   const outerContainer = document.getElementsByClassName('productList_Outermost_Container')[0]
   const originalProducts = outerContainer.innerHTML
 
+  // searchBar.addEventListener('click', debounce((event) => {
+  //   if (searchBar.value === '') {
+  //     outerContainer.innerHTML = originalProducts
+  //     addMoreContentBtns()
+  //   }
+  // }), 100)
   searchBar.addEventListener('keyup', debounce(async event => {
     try {
       const keyword = searchBar.value
@@ -71,7 +78,7 @@ document.addEventListener('DOMContentLoaded', event => {
       const ul = document.createElement('ul')
 
       middleContainer.classList.add('productList_OuterContainer')
-      innerContainer.classList.add('product_InnerContainer')
+      innerContainer.classList.add('productList_InnerContainer')
       dayOfListing.classList.add('productList_dayOfListing')
       ul.classList.add('productList_products')
 
@@ -83,7 +90,12 @@ document.addEventListener('DOMContentLoaded', event => {
 
       if (jsonProducts.length === 0) {
         dayOfListing.innerText = ''
-        innerContainer.innerText = `Sorry, we couldn't find any products matching "${keyword}"`
+        const searchError = document.createElement('span')
+        searchError.classList.add('productList_searchError')
+        searchError.innerText = `Sorry, we couldn't find any products matching "${keyword}"`
+
+        innerContainer.innerHTML = ''
+        innerContainer.appendChild(searchError)
         return
       }
       for (let i = 0; i < jsonProducts.length; i++) {
@@ -119,36 +131,4 @@ document.addEventListener('DOMContentLoaded', event => {
       console.log(err)
     }
   }, 500))
-  // const outerContainer = document.getElementsByClassName('productList_Outermost_Container')[0]
-  // const middleContainer = document.createElement('div')
-  // const innerContainer = document.createElement('div')
-  // const ul = document.createElement('ul')
-  // middleContainer.classList.add('productList_OuterContainer')
-  // innerContainer.classList.add('product_InnerContainer')
-  // ul.classList.add('productList_products')
-  // for (let i = 0; i < jsonProducts.length; i++) {
-  //     const product = jsonProducts[i]
-  //     const newATag = document.createElement('a')
-  //     const newli = document.createElement('li')
-  //     const newImg = document.createElement('img')
-  //     const divOuter = document.createElement('div')
-  //     const nameDiv = document.createElement('div')
-  //     const descriptionDiv = document.createElement('div')
-  //     newATag.setAttribute('href', `/products/${product.id}`)
-  //     newImg.setAttribute('src', `${product.defaultImg}`)
-  //     newImg.setAttribute('alt', 'product image')
-  //     nameDiv.setAttribute('class', 'productList_name')
-  //     descriptionDiv.setAttribute('class', 'productList_description')
-  //     nameDiv.innerText = product.productName
-  //     descriptionDiv.innerText = product.description
-  //     newATag.appendChild(newli)
-  //     newli.appendChild(newImg)
-  //     newli.appendChild(divOuter)
-  //     divOuter.appendChild(nameDiv)
-  //     divOuter.appendChild(descriptionDiv)
-  //     ul.appendChild(newATag)
-  // }
-  // innerContainer.appendChild(ul)
-  // middleContainer.appendChild(innerContainer)
-  // outerContainer.appendChild(middleContainer)
 })
